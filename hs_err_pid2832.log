@@ -1,0 +1,162 @@
+#
+# There is insufficient memory for the Java Runtime Environment to continue.
+# Native memory allocation (malloc) failed to allocate 492328 bytes for Chunk::new
+# Possible reasons:
+#   The system is out of physical RAM or swap space
+#   In 32 bit mode, the process size limit was hit
+# Possible solutions:
+#   Reduce memory load on the system
+#   Increase physical memory or swap space
+#   Check if swap backing store is full
+#   Use 64 bit Java on a 64 bit OS
+#   Decrease Java heap size (-Xmx/-Xms)
+#   Decrease number of Java threads
+#   Decrease Java thread stack sizes (-Xss)
+#   Set larger code cache with -XX:ReservedCodeCacheSize=
+# This output file may be truncated or incomplete.
+#
+#  Out of Memory Error (allocation.cpp:317), pid=2832, tid=2020
+#
+# JRE version: 6.0_26-b03
+# Java VM: Java HotSpot(TM) Server VM (20.1-b02 mixed mode windows-x86 )
+
+---------------  T H R E A D  ---------------
+
+Current thread (0x01a9ec00):  JavaThread "C2 CompilerThread1" daemon [_thread_in_native, id=2020, stack(0x452d0000,0x45320000)]
+
+Stack: [0x452d0000,0x45320000],  sp=0x4531e894,  free space=314k
+Native frames: (J=compiled Java code, j=interpreted, Vv=VM code, C=native code)
+V  [jvm.dll+0x14865a]
+V  [jvm.dll+0x14367c]
+V  [jvm.dll+0x5e7ac]
+V  [jvm.dll+0x5ea43]
+V  [jvm.dll+0x7058e]
+V  [jvm.dll+0x268098]
+V  [jvm.dll+0x292de7]
+V  [jvm.dll+0x25d199]
+V  [jvm.dll+0x25fd48]
+V  [jvm.dll+0x2605c8]
+V  [jvm.dll+0x24e98a]
+V  [jvm.dll+0x47f4d]
+V  [jvm.dll+0x48adf]
+V  [jvm.dll+0x12ddd4]
+V  [jvm.dll+0x15627c]
+C  [msvcr71.dll+0x9565]  endthreadex+0xa0
+C  [kernel32.dll+0x51174]  BaseThreadInitThunk+0x12
+C  [ntdll.dll+0x5b3f5]  RtlInitializeExceptionChain+0x63
+C  [ntdll.dll+0x5b3c8]  RtlInitializeExceptionChain+0x36
+
+
+Current CompileTask:
+C2:   7561 101      groovy.lang.MetaClassImpl.populateMethods(Ljava/util/LinkedList;Lorg/codehaus/groovy/reflection/CachedClass;)V (372 bytes)
+
+
+---------------  P R O C E S S  ---------------
+
+Java Threads: ( => current thread )
+  0x01a9f400 JavaThread "Low Memory Detector" daemon [_thread_blocked, id=6068, stack(0x45320000,0x45370000)]
+=>0x01a9ec00 JavaThread "C2 CompilerThread1" daemon [_thread_in_native, id=2020, stack(0x452d0000,0x45320000)]
+  0x01a9e000 JavaThread "C2 CompilerThread0" daemon [_thread_blocked, id=4620, stack(0x45080000,0x450d0000)]
+  0x01a98000 JavaThread "Attach Listener" daemon [_thread_blocked, id=4456, stack(0x45030000,0x45080000)]
+  0x01a97c00 JavaThread "Signal Dispatcher" daemon [_thread_blocked, id=4088, stack(0x44fe0000,0x45030000)]
+  0x01a61c00 JavaThread "Finalizer" daemon [_thread_blocked, id=5708, stack(0x44f90000,0x44fe0000)]
+  0x01a5ec00 JavaThread "Reference Handler" daemon [_thread_blocked, id=4188, stack(0x44f40000,0x44f90000)]
+  0x00d99c00 JavaThread "main" [_thread_in_native, id=4896, stack(0x001c0000,0x00210000)]
+
+Other Threads:
+  0x01a5b400 VMThread [stack: 0x44ef0000,0x44f40000] [id=4120]
+  0x450ddc00 WatcherThread [stack: 0x45370000,0x453c0000] [id=5844]
+
+VM state:not at safepoint (normal execution)
+
+VM Mutex/Monitor currently owned by a thread: None
+
+Heap
+ PSYoungGen      total 229376K, used 42187K [0x34b60000, 0x44b60000, 0x44b60000)
+  eden space 196608K, 21% used [0x34b60000,0x37492e38,0x40b60000)
+  from space 32768K, 0% used [0x42b60000,0x42b60000,0x44b60000)
+  to   space 32768K, 0% used [0x40b60000,0x40b60000,0x42b60000)
+ PSOldGen        total 524288K, used 0K [0x14b60000, 0x34b60000, 0x34b60000)
+  object space 524288K, 0% used [0x14b60000,0x14b60000,0x34b60000)
+ PSPermGen       total 262144K, used 12456K [0x04b60000, 0x14b60000, 0x14b60000)
+  object space 262144K, 4% used [0x04b60000,0x0578a3b0,0x14b60000)
+
+Code Cache  [0x01aa0000, 0x01ce0000, 0x04aa0000)
+ total_blobs=472 nmethods=108 adapters=318 free_code_cache=48784640 largest_free_block=40256
+
+Dynamic libraries:
+0x00400000 - 0x00424000 	C:\Program Files\Java\jdk1.6.0_26\bin\java.exe
+0x775e0000 - 0x7771c000 	C:\Windows\SYSTEM32\ntdll.dll
+0x77500000 - 0x775d4000 	C:\Windows\system32\kernel32.dll
+0x757e0000 - 0x7582a000 	C:\Windows\system32\KERNELBASE.dll
+0x701d0000 - 0x7020c000 	C:\Program Files\AVAST Software\Avast\snxhk.dll
+0x76080000 - 0x76120000 	C:\Windows\system32\ADVAPI32.dll
+0x75c30000 - 0x75cdc000 	C:\Windows\system32\msvcrt.dll
+0x77720000 - 0x77739000 	C:\Windows\SYSTEM32\sechost.dll
+0x76f80000 - 0x77021000 	C:\Windows\system32\RPCRT4.dll
+0x7c340000 - 0x7c396000 	C:\Program Files\Java\jdk1.6.0_26\jre\bin\msvcr71.dll
+0x6db70000 - 0x6dfc8000 	C:\Program Files\Java\jdk1.6.0_26\jre\bin\server\jvm.dll
+0x77420000 - 0x774e9000 	C:\Windows\system32\USER32.dll
+0x77040000 - 0x7708e000 	C:\Windows\system32\GDI32.dll
+0x774f0000 - 0x774fa000 	C:\Windows\system32\LPK.dll
+0x76ee0000 - 0x76f7d000 	C:\Windows\system32\USP10.dll
+0x73880000 - 0x738b2000 	C:\Windows\system32\WINMM.dll
+0x75ce0000 - 0x75cff000 	C:\Windows\system32\IMM32.DLL
+0x75fb0000 - 0x7607c000 	C:\Windows\system32\MSCTF.dll
+0x75630000 - 0x7567b000 	C:\Windows\system32\apphelp.dll
+0x6d850000 - 0x6d85c000 	C:\Program Files\Java\jdk1.6.0_26\jre\bin\verify.dll
+0x6d3d0000 - 0x6d3ef000 	C:\Program Files\Java\jdk1.6.0_26\jre\bin\java.dll
+0x75d00000 - 0x75d05000 	C:\Windows\system32\PSAPI.DLL
+0x6d890000 - 0x6d89f000 	C:\Program Files\Java\jdk1.6.0_26\jre\bin\zip.dll
+0x751b0000 - 0x751c6000 	C:\Windows\system32\CRYPTSP.dll
+0x74f50000 - 0x74f8b000 	C:\Windows\system32\rsaenh.dll
+0x74d50000 - 0x74d67000 	C:\Windows\system32\USERENV.dll
+0x75730000 - 0x7573b000 	C:\Windows\system32\profapi.dll
+0x756b0000 - 0x756bc000 	C:\Windows\system32\CRYPTBASE.dll
+0x6d6b0000 - 0x6d6c3000 	C:\Program Files\Java\jdk1.6.0_26\jre\bin\net.dll
+0x77740000 - 0x77775000 	C:\Windows\system32\WS2_32.dll
+0x75d10000 - 0x75d16000 	C:\Windows\system32\NSI.dll
+0x75170000 - 0x751ac000 	C:\Windows\system32\mswsock.dll
+0x75160000 - 0x75166000 	C:\Windows\System32\wship6.dll
+0x73710000 - 0x73720000 	C:\Windows\system32\NLAapi.dll
+0x75030000 - 0x75074000 	C:\Windows\system32\DNSAPI.dll
+0x704e0000 - 0x704e8000 	C:\Windows\System32\winrnr.dll
+0x704d0000 - 0x704e0000 	C:\Windows\system32\napinsp.dll
+0x704a0000 - 0x704b2000 	C:\Windows\system32\pnrpnsp.dll
+0x70470000 - 0x70497000 	C:\Program Files\Common Files\Microsoft Shared\Windows Live\WLIDNSP.DLL
+0x76d70000 - 0x76dc7000 	C:\Windows\system32\SHLWAPI.dll
+0x74aa0000 - 0x74aa5000 	C:\Windows\System32\wshtcpip.dll
+0x73450000 - 0x7346c000 	C:\Windows\system32\IPHLPAPI.DLL
+0x73440000 - 0x73447000 	C:\Windows\system32\WINNSI.DLL
+0x6f910000 - 0x6f916000 	C:\Windows\system32\rasadhlp.dll
+0x731f0000 - 0x73228000 	C:\Windows\System32\fwpuclnt.dll
+0x45910000 - 0x45964000 	C:\Users\Arthur\AppData\Local\Temp\jna5702353818337916352.dll
+0x00d70000 - 0x00d78000 	C:\Users\Arthur\AppData\Local\Temp\jline_.dll
+
+VM Arguments:
+jvm_args: -Xmx768M -Xms768M -XX:PermSize=256m -XX:MaxPermSize=256m -Dfile.encoding=UTF-8 -Djline.WindowsTerminal.directConsole=false -Dprogram.name= -Dgrails.home=C:\grails-2.1.0 -Dgrails.version=2.1.0 -Dbase.dir=. -Dtools.jar=C:\Program Files\Java\jdk1.6.0_26\lib\tools.jar -Dgroovy.starter.conf=C:\grails-2.1.0\conf\groovy-starter.conf 
+java_command: org.codehaus.groovy.grails.cli.support.GrailsStarter --main org.codehaus.groovy.grails.cli.support.GrailsStarter --conf C:\grails-2.1.0\conf\groovy-starter.conf --classpath   generate-all cmf.OrdemServico
+Launcher Type: SUN_STANDARD
+
+Environment Variables:
+JAVA_HOME=C:\Program Files\Java\jdk1.6.0_26
+PATH=C:\Program Files\Borland\Delphi7\Bin;C:\Program Files\Borland\Delphi7\Projects\Bpl\;C:\Program Files\Common Files\Microsoft Shared\Windows Live;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;C:\Program Files\TortoiseSVN\bin;C:\Program Files\Windows Live\Shared;C:\grails-1.3.7\bin
+USERNAME=Arthur
+OS=Windows_NT
+PROCESSOR_IDENTIFIER=x86 Family 6 Model 15 Stepping 13, GenuineIntel
+
+
+
+---------------  S Y S T E M  ---------------
+
+OS: Windows 7 Build 7600 
+
+CPU:total 2 (2 cores per cpu, 1 threads per core) family 6 model 15 stepping 13, cmov, cx8, fxsr, mmx, sse, sse2, sse3, ssse3
+
+Memory: 4k page, physical 2087352k(338740k free), swap 4713388k(486252k free)
+
+vm_info: Java HotSpot(TM) Server VM (20.1-b02) for windows-x86 JRE (1.6.0_26-b03), built on May  4 2011 00:42:38 by "java_re" with MS VC++ 7.1 (VS2003)
+
+time: Sun Oct 07 22:33:04 2012
+elapsed time: 7 seconds
+
