@@ -4,7 +4,7 @@
 	<head>
 		<meta name="layout" content="main">
 		<g:set var="entityName" value="${message(code: 'ordemServico.label', default: 'OrdemServico')}" />
-		<resource:autoComplete skin="default" />
+		<r:require module="autocomplete"/>
                 <title><g:message code="default.create.label" args="[entityName]" /></title>
 	</head>
 	<body>

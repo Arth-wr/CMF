@@ -1,5 +1,7 @@
 package cmf
 
+import grails.converters.JSON;
+
 import org.springframework.dao.DataIntegrityViolationException
 
 class ServicoController {
@@ -22,6 +24,19 @@ class ServicoController {
             }
         }
     }
+	
+	def searchJSON () {
+		def services = Servico.findAllfindAllByDescricaoLike("%${params.name_startsWith}%")
+		
+		def c = Servico.createCriteria();
+		
+		def results = c { 
+			like("descricao", "%${params.name_startsWith}%")
+			maxResults(Integer.parseInt( params.maxRows))
+		}
+		
+		render results as JSON;
+	}
 
     def index() {
         redirect(action: "list", params: params)

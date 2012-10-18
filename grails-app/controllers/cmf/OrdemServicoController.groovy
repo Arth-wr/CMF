@@ -16,7 +16,7 @@ class OrdemServicoController {
     }
 
     def create() {
-        [ordemServicoInstance: new OrdemServico(params)]
+        [ordemServicoInstance: new OrdemServico(params), ]
     }
     
     def insereServico(){
@@ -33,6 +33,9 @@ class OrdemServicoController {
 
     def save() {
         def ordemServicoInstance = new OrdemServico(params)
+        
+        println(params)
+             
         if (!ordemServicoInstance.save(flush: true)) {
             render(view: "create", model: [ordemServicoInstance: ordemServicoInstance])
             return
