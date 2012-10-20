@@ -16,7 +16,7 @@ class OrdemServicoController {
     }
 
     def create() {
-        [ordemServicoInstance: new OrdemServico(params), ]
+        [ordemServicoInstance: new OrdemServico(params)]
     }
     
     def insereServico(){

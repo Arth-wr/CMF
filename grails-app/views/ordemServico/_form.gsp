@@ -33,7 +33,7 @@
 	<label for="servicos">
 		<g:message code="ordemServico.servicos.label" default="Servicos" />		
         </label>
-        <g:select name="servicos" from="${ordemServico.Servico.list()}" multiple="true" optionKey="id" size="5" value="${ordemServicoInstance?.servicos*.id}" class="many-to-many"/>
+        <g:select name="servicos" from="${}" multiple="true" optionKey="id" size="5" value="${ordemServicoInstance?.servicos*.id}" class="many-to-many"/>
     </div>	
         ${service}
 
@@ -47,8 +47,8 @@
                  // alert($('#ordemAuto').val());
 	  
 		  var input = document.createElement('input');
-		  //$(input).attr("value", $( '#idserviceAdd').val() );
-                  $(input).attr("value", '\$\{ordemServicoInstance?.servicos*.id}' );
+		  $(input).attr("value", $( '#idserviceAdd').val() );
+                 // $(input).attr("value", '\$\{ordemServicoInstance?.servicos*.id}' );
 		  $(input).attr("name", 'service.id' );
 		  $(input).attr("type", 'hidden' );
                   //$(input).attr("id", 'service' );

@@ -4,7 +4,7 @@ class Peca {
 	
 	String nome
 	String referencia
-	String referencia2
+	String referenciaTecnica
 	String marca
 	float valorCompra
 	String localizacao
@@ -12,12 +12,11 @@ class Peca {
 	int quantidade
 	
 	String toString() {
-			"${nome} - ${referencia} - ${referencia2}"
+			"${nome} - ${referencia}"
 		}
 
     static constraints = {
 		referencia unique: true
-		referencia2 unique: true
 		nome blank: false
 		
     }

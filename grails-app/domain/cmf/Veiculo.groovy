@@ -8,6 +8,10 @@ class Veiculo {
 	String placa
 	String chassi
 	TipoVeiculo tipoVeiculo
+        
+    String toString(){
+        "${marca} ${modelo} ${placa}"
+    }
 
     static constraints = {
 		chassi unique: true
