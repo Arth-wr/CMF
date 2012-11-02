@@ -1,10 +1,11 @@
 <%@ page import="cmf.OrdemServico" %>
-<!doctype html>
+<!DOCTYPE html>
 <html>
 	<head>
 		<meta name="layout" content="main">
 		<g:set var="entityName" value="${message(code: 'ordemServico.label', default: 'OrdemServico')}" />
 		<title><g:message code="default.edit.label" args="[entityName]" /></title>
+                <r:require module="autocomplete"/>
 	</head>
 	<body>
 		<a href="#edit-ordemServico" class="skip" tabindex="-1"><g:message code="default.link.skip.label" default="Skip to content&hellip;"/></a>
@@ -32,6 +33,24 @@
 				<g:hiddenField name="version" value="${ordemServicoInstance?.version}" />
 				<fieldset class="form">
 					<g:render template="form"/>
+                                        
+                                          <div class="fieldcontain ${hasErrors(bean: ordemServicoInstance, field: 'statusServico', 'error')} ">
+                                              <label for="statusServico">
+                                                      <g:message code="ordemServico.statusServico.label" default="Status Servico" />
+
+                                              </label>
+
+                                      <ul class="one-to-many">
+                                      <g:each in="${ordemServicoInstance?.statusServico?}" var="s">
+                                          <li><g:link controller="statusServico" action="show" id="${s.id}">${s?.encodeAsHTML()}</g:link></li>
+                                      </g:each>
+                                      <li class="add">
+                                      <g:link controller="statusServico" action="create" params="['ordemServico.id': ordemServicoInstance?.id]">${message(code: 'default.add.label', args: [message(code: 'statusServico.label', default: 'StatusServico')])}</g:link>
+                                      </li>
+                                      </ul>
+
+                                      </div>
+                                        
 				</fieldset>
 				<fieldset class="buttons">
 					<g:actionSubmit class="save" action="update" value="${message(code: 'default.button.update.label', default: 'Update')}" />

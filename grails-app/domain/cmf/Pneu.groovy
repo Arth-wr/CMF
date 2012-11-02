@@ -6,7 +6,11 @@ class Pneu {
 	String dot
 	String fogo
 	TipoPneu tipoPneu
-	String preco	
+	String preco
+
+    String toString(){
+        "${marca} - ${dot}"
+    }
 
     static constraints = {
 		

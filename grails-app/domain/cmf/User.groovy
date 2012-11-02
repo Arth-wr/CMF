@@ -1,4 +1,4 @@
-package CMF
+package cmf
 
 class User {
 

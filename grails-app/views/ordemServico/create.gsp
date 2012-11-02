@@ -1,11 +1,11 @@
 <%@ page import="cmf.OrdemServico" %>
-<!doctype html>
+<!DOCTYPE html>
 <html>
 	<head>
 		<meta name="layout" content="main">
 		<g:set var="entityName" value="${message(code: 'ordemServico.label', default: 'OrdemServico')}" />
-		<r:require module="autocomplete"/>
-                <title><g:message code="default.create.label" args="[entityName]" /></title>
+		<title><g:message code="default.create.label" args="[entityName]" /></title>
+                <r:require module="autocomplete"/>
 	</head>
 	<body>
 		<a href="#create-ordemServico" class="skip" tabindex="-1"><g:message code="default.link.skip.label" default="Skip to content&hellip;"/></a>
@@ -27,10 +27,6 @@
 				</g:eachError>
 			</ul>
 			</g:hasErrors>
-                        
-                                       
-       
-                        
 			<g:form action="save" >
 				<fieldset class="form">
 					<g:render template="form"/>
@@ -39,14 +35,6 @@
 					<g:submitButton name="create" class="save" value="${message(code: 'default.button.create.label', default: 'Create')}" />
 				</fieldset>
 			</g:form>
-                        
-         
-                       
-                        
-                        
 		</div>
- 
-
-                
 	</body>
 </html>

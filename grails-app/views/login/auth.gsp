@@ -26,7 +26,7 @@
 		padding: 18px 26px 14px 26px;
 		background-color: #f7f7ff;
 		margin: 0px 0 14px 0;
-		color: #2e3741;
+		color: #436EEE;
 		font-size: 18px;
 		font-weight: bold;
 	}
@@ -52,6 +52,7 @@
 		width: 110px;
 		padding-top: 3px;
 		padding-right: 10px;
+                color: #436EEE;
 	}
 
 	#login #remember_me_holder {
@@ -87,7 +88,7 @@
 <body>
 <div id='login'>
 	<div class='inner'>
-		<div class='fheader'><g:message code="springSecurity.login.header"/></div>
+		<div class='fheader'><g:message code="Login"/></div>
 
 		<g:if test='${flash.message}'>
 			<div class='login_message'>${flash.message}</div>
@@ -95,18 +96,18 @@
 
 		<form action='${postUrl}' method='POST' id='loginForm' class='cssform' autocomplete='off'>
 			<p>
-				<label for='username'><g:message code="springSecurity.login.username.label"/>:</label>
+				<label for='username'><g:message code="Usuário"/>:</label>
 				<input type='text' class='text_' name='j_username' id='username'/>
 			</p>
 
 			<p>
-				<label for='password'><g:message code="springSecurity.login.password.label"/>:</label>
+				<label for='password'><g:message code="Senha"/>:</label>
 				<input type='password' class='text_' name='j_password' id='password'/>
 			</p>
 
 			<p id="remember_me_holder">
 				<input type='checkbox' class='chk' name='${rememberMeParameter}' id='remember_me' <g:if test='${hasCookie}'>checked='checked'</g:if>/>
-				<label for='remember_me'><g:message code="springSecurity.login.remember.me.label"/></label>
+				<label for='remember_me'><g:message code="Lembrar Senha"/></label>
 			</p>
 
 			<p>

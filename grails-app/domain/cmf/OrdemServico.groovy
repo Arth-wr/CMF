@@ -4,9 +4,16 @@ class OrdemServico {
     
     Date entrada
     Date saida
+    boolean emAberto
     
-    static hasMany = [servicos : Servico]
+    String toString(){
+        "${entrada}"
+    }
+    
+    static hasMany = [servicos : Servico, statusServico: StatusServico]
 
     static constraints = {
+        saida blank:true
+        saida nullable:true
     }
 }

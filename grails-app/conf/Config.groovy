@@ -94,3 +94,8 @@ log4j = {
 grails.plugins.springsecurity.userLookup.userDomainClassName = 'CMF.User'
 grails.plugins.springsecurity.userLookup.authorityJoinClassName = 'CMF.UserRole'
 grails.plugins.springsecurity.authority.className = 'CMF.Role'
+
+// Added by the Spring Security Core plugin:
+grails.plugins.springsecurity.userLookup.userDomainClassName = 'cmf.User'
+grails.plugins.springsecurity.userLookup.authorityJoinClassName = 'cmf.UserRole'
+grails.plugins.springsecurity.authority.className = 'cmf.Role'

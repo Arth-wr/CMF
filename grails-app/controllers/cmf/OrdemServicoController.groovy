@@ -18,24 +18,16 @@ class OrdemServicoController {
     def create() {
         [ordemServicoInstance: new OrdemServico(params)]
     }
-    
-    def insereServico(){
-        
-       def servico = params.service 
-       def listaServicos = Servico.findAllWhere(descricao: servico)
-       
-     //  def sessao = session["sessao"]
-     //  session["sessao"] = listaServicos
-   
-       render(view: "create", model:[sessao: sessao, servico : servico, listaServicos : listaServicos])
-       return       
-    }
 
     def save() {
         def ordemServicoInstance = new OrdemServico(params)
         
-        println(params)
-             
+        def services = []
+        params.service.id.each {
+            services << Servico.get(Long.valueOf(it));
+        }
+        ordemServicoInstance.servicos = services;
+        
         if (!ordemServicoInstance.save(flush: true)) {
             render(view: "create", model: [ordemServicoInstance: ordemServicoInstance])
             return

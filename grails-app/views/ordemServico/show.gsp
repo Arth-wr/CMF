@@ -1,6 +1,6 @@
 
 <%@ page import="cmf.OrdemServico" %>
-<!doctype html>
+<!DOCTYPE html>
 <html>
 	<head>
 		<meta name="layout" content="main">
@@ -23,20 +23,29 @@
 			</g:if>
 			<ol class="property-list ordemServico">
 			
-				<g:if test="${ordemServicoInstance?.entrada}">
-				<li class="fieldcontain">
-					<span id="entrada-label" class="property-label"><g:message code="ordemServico.entrada.label" default="Entrada" /></span>
-					
-						<span class="property-value" aria-labelledby="entrada-label"><g:formatDate date="${ordemServicoInstance?.entrada}" /></span>
-					
-				</li>
-				</g:if>
-			
 				<g:if test="${ordemServicoInstance?.saida}">
 				<li class="fieldcontain">
 					<span id="saida-label" class="property-label"><g:message code="ordemServico.saida.label" default="Saida" /></span>
 					
 						<span class="property-value" aria-labelledby="saida-label"><g:formatDate date="${ordemServicoInstance?.saida}" /></span>
+					
+				</li>
+				</g:if>
+			
+				<g:if test="${ordemServicoInstance?.emAberto}">
+				<li class="fieldcontain">
+					<span id="emAberto-label" class="property-label"><g:message code="ordemServico.emAberto.label" default="Em Aberto" /></span>
+					
+						<span class="property-value" aria-labelledby="emAberto-label"><g:formatBoolean boolean="${ordemServicoInstance?.emAberto}" /></span>
+					
+				</li>
+				</g:if>
+			
+				<g:if test="${ordemServicoInstance?.entrada}">
+				<li class="fieldcontain">
+					<span id="entrada-label" class="property-label"><g:message code="ordemServico.entrada.label" default="Entrada" /></span>
+					
+						<span class="property-value" aria-labelledby="entrada-label"><g:formatDate date="${ordemServicoInstance?.entrada}" /></span>
 					
 				</li>
 				</g:if>
@@ -47,6 +56,17 @@
 					
 						<g:each in="${ordemServicoInstance.servicos}" var="s">
 						<span class="property-value" aria-labelledby="servicos-label"><g:link controller="servico" action="show" id="${s.id}">${s?.encodeAsHTML()}</g:link></span>
+						</g:each>
+					
+				</li>
+				</g:if>
+			
+				<g:if test="${ordemServicoInstance?.statusServico}">
+				<li class="fieldcontain">
+					<span id="statusServico-label" class="property-label"><g:message code="ordemServico.statusServico.label" default="Status Servico" /></span>
+					
+						<g:each in="${ordemServicoInstance.statusServico}" var="s">
+						<span class="property-value" aria-labelledby="statusServico-label"><g:link controller="statusServico" action="show" id="${s.id}">${s?.encodeAsHTML()}</g:link></span>
 						</g:each>
 					
 				</li>

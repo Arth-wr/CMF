@@ -1,4 +1,4 @@
-package CMF
+package cmf
 
 import org.apache.commons.lang.builder.HashCodeBuilder
 

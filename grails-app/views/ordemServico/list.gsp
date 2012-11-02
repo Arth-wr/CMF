@@ -1,6 +1,6 @@
 
 <%@ page import="cmf.OrdemServico" %>
-<!doctype html>
+<!DOCTYPE html>
 <html>
 	<head>
 		<meta name="layout" content="main">
@@ -24,9 +24,11 @@
 				<thead>
 					<tr>
 					
-						<g:sortableColumn property="entrada" title="${message(code: 'ordemServico.entrada.label', default: 'Entrada')}" />
-					
 						<g:sortableColumn property="saida" title="${message(code: 'ordemServico.saida.label', default: 'Saida')}" />
+					
+						<g:sortableColumn property="emAberto" title="${message(code: 'ordemServico.emAberto.label', default: 'Em Aberto')}" />
+					
+						<g:sortableColumn property="entrada" title="${message(code: 'ordemServico.entrada.label', default: 'Entrada')}" />
 					
 					</tr>
 				</thead>
@@ -34,9 +36,11 @@
 				<g:each in="${ordemServicoInstanceList}" status="i" var="ordemServicoInstance">
 					<tr class="${(i % 2) == 0 ? 'even' : 'odd'}">
 					
-						<td><g:link action="show" id="${ordemServicoInstance.id}">${fieldValue(bean: ordemServicoInstance, field: "entrada")}</g:link></td>
+						<td><g:link action="show" id="${ordemServicoInstance.id}">${fieldValue(bean: ordemServicoInstance, field: "saida")}</g:link></td>
 					
-						<td><g:formatDate date="${ordemServicoInstance.saida}" /></td>
+						<td><g:formatBoolean boolean="${ordemServicoInstance.emAberto}" /></td>
+					
+						<td><g:formatDate date="${ordemServicoInstance.entrada}" /></td>
 					
 					</tr>
 				</g:each>
